@@ -1,15 +1,27 @@
 import React from 'react';
 import {HeaderItem, HeaderWrapper, HomeLink, IGLogo} from "./Header.styles";
 import Nav from "../Nav";
-import {PUBLIC_ASSETS_URL} from "../../constants";
+import {MOBILE_WIDTH, PUBLIC_ASSETS_URL} from "../../constants";
+import {useWindowDimensions} from "../../hooks";
+import FlyoutMenu from "../FlyoutMenu";
 
 const Header = () => {
     const pathname = 'https://www.instagram.com/ceesvrr';
+    const { width } = useWindowDimensions();
     return (
         <HeaderWrapper>
-            <HeaderItem>
-                <Nav/>
-            </HeaderItem>
+            {
+                +width > MOBILE_WIDTH && 
+                <HeaderItem>
+                    <Nav/>
+                </HeaderItem>
+            }
+            {
+                +width < MOBILE_WIDTH &&
+                <HeaderItem>
+                    <FlyoutMenu className='flyout'/>
+                </HeaderItem>
+            }
             <HeaderItem>
                 <HomeLink to="/">Justin Caesar Allen</HomeLink>
             </HeaderItem>

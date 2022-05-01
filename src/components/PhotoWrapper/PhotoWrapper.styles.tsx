@@ -1,15 +1,23 @@
 import styled from 'styled-components';
 
 const PhotoWrapperWrapper = styled.div`
-	margin: 0;
+	margin: 1px;
 	padding: 0;
 	display: flex;
-	overflow-x: auto;
-	overflow-y: hidden;
+	overflow: auto;
+	
+	@media (max-width: 500px) {
+		flex-direction: column;
+  	}
 	
 	img {
-		margin: 5px 1px;
+		margin: 1px;
 		height: 920px;
+		
+		@media (max-width: 500px) {
+    		width: auto;
+    		height: auto;
+  		}
 	}
 `;
 

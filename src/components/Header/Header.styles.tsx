@@ -10,7 +10,6 @@ const HeaderWrapper = styled.div`
 
 const HeaderItem = styled.div`
 	margin: 10px;
-	position: relative;
 	width: 10rem;
 	display: flex;
 	justify-content: center;

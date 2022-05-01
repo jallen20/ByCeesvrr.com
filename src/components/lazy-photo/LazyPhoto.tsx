@@ -10,9 +10,7 @@ const LazyImage = (props: { src: string, alt: string }) => {
     
     const [opacity, setOpacity] = useState(0);
     
-    const fade = (_opacity: number) => {
-        setTimeout(() => setOpacity(_opacity), 10);
-    }
+    const fade = (_opacity: number) => setTimeout(() => setOpacity(_opacity), 5);
 
     if (inView) fade(1);
     else fade(0);
