@@ -22,12 +22,12 @@ const Contact = () => {
 
     const onSubmit =  (e: any) => {
         e.preventDefault();
-        sendMail(
+        sendMail({
             firstName,
             lastName,
             subject,
             email,
-            message )
+            message} )
             .then(() => reset());
     };
 

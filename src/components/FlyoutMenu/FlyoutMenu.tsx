@@ -1,27 +1,27 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {FlyoutContent, FlyoutMenuWrapper, Line, CloseButton} from "./FlyoutMenu.styles";
 import Nav from "../Nav";
+import {useDispatch, useSelector} from "react-redux";
+import {getIsNavOpen} from "../../ducks/selectors";
+import {toggleNav} from "../../ducks/actions";
 
-const FlyoutMenu = (props: { className: string }) => {
-    const { className } = props;
-    const [x, setX] = useState('-250px');
-    const [isOpen, setIsOpen] = useState(false);
+const FlyoutMenu = () => {
+    const dispatch = useDispatch();
+    const isOpen = useSelector(getIsNavOpen);
     
-    const toggle = () => {
-        setIsOpen(!isOpen);
-        if (isOpen) setX('0');
-        else setX('-250px');
-    }
+    const onOpenNav = () => dispatch(toggleNav(true));
+    const onCloseNav = () => dispatch(toggleNav(false));
+    
     return (
         <>
-            <FlyoutMenuWrapper className={className} onClick={toggle}>
+            <FlyoutMenuWrapper onClick={onOpenNav}>
                 <Line/>
                 <Line/>
                 <Line/>
             </FlyoutMenuWrapper>
-            <FlyoutContent style={{ transform: `translateX(${x})` }}>
+            <FlyoutContent style={{ transform: `translateX(${isOpen ? '0' : '-250px'})` }}>
                 <Nav />
-                <CloseButton onClick={toggle}>Close</CloseButton>
+                <CloseButton onClick={onCloseNav}>Close</CloseButton>
             </FlyoutContent>
         </>
     )

@@ -1,12 +1,21 @@
 import * as emailJs from 'emailjs-com';
 
-export const sendMail = async (
+export type EmailRequest = {
     firstName: string,
     lastName: string,
     subject: string,
     email: string,
     message: string
-) => {
+}
+
+export const sendMail = async (emailRequest: EmailRequest) => {
+    const {
+        firstName,
+        lastName,
+        subject,
+        email,
+        message
+    } = emailRequest;
     const fromName = `${firstName} ${lastName}`;
     const res = await emailJs.send(
         process.env.REACT_APP_EMAIL_SERVICE_ID as any,

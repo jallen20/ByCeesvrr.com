@@ -6,7 +6,6 @@ import {useWindowDimensions} from "../../hooks";
 import FlyoutMenu from "../FlyoutMenu";
 
 const Header = () => {
-    const pathname = 'https://www.instagram.com/ceesvrr';
     const { width } = useWindowDimensions();
     return (
         <HeaderWrapper>
@@ -19,7 +18,7 @@ const Header = () => {
             {
                 +width < MOBILE_WIDTH &&
                 <HeaderItem>
-                    <FlyoutMenu className='flyout'/>
+                    <FlyoutMenu/>
                 </HeaderItem>
             }
             <HeaderItem>
