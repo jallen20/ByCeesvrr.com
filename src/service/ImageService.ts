@@ -25,6 +25,7 @@ export const fetchSirvToken = async () => {
 // TODO Implement pagination
 export const fetchPhotos = async (token: any) => {
     try {
+        console.log(SirvClientConfig);
         let data = [];
         let req = await fetch(SIRV_LIST_DIR_CONTENTS_URL, getHttpGetSetting(token));
         let res = await req.json();
