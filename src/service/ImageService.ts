@@ -9,7 +9,7 @@ import {PORTFOLIO_DIRNAME} from "../constants";
 import {Photo} from "../store/main";
 
 const SIRV_API_TOKEN_URL = 'https://api.sirv.com/v2/token';
-const SIRV_LIST_DIR_CONTENTS_URL = `https://api.sirv.com/v2/files/readdir?dirname=%2F${PORTFOLIO_DIRNAME}&continuation`
+const SIRV_LIST_DIR_CONTENTS_URL = `https://api.sirv.com/v2/files/readdir?dirname=%2F${PORTFOLIO_DIRNAME}&continuation=`
 const SIRV_SEARCH_API_URL = 'https://api.sirv.com/v2/files/search';
 
 export const fetchSirvToken = async () => {
@@ -30,7 +30,7 @@ export const fetchPhotos = async (token: any) => {
         let res = await req.json();
         if (!res?.contents) throw new Error(`Could not fetch response from ${SIRV_LIST_DIR_CONTENTS_URL}`);
         if (res.continuation) {
-            const url = `${SIRV_LIST_DIR_CONTENTS_URL}=${res.continuation}`;
+            const url = `${SIRV_LIST_DIR_CONTENTS_URL}${res.continuation}`;
             const continuedReq = await fetch(url, getHttpGetSetting(token));
             const resContinued = await continuedReq.json();
             console.log(resContinued);

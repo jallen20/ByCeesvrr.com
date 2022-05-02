@@ -23,6 +23,7 @@ const LazyImage = (props: { src: string, alt: string }) => {
             key={`${src}_key`}
             style={{ opacity }}
             onLoad={() => fade(1)}
+            loading='lazy'
         />
     );
 };
