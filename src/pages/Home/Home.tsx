@@ -1,11 +1,11 @@
 import React, {useEffect} from 'react';
-import {_init, Photo} from "../../store/main";
+import {_init} from "../../store/main";
 import {HomeWrapper} from './Home.styles';
 import PhotoWrapper from "../../components/PhotoWrapper";
-import {HOME_PHOTO} from "../../constants";
 import {useDispatch, useSelector} from "react-redux";
 import {setPhotos} from "../../ducks/actions";
 import {getHomePhotos} from "../../ducks/selectors";
+import {SirvSearchQuery} from "../../config";
 
 const Home = () => {
     const dispatch = useDispatch();
@@ -14,7 +14,7 @@ const Home = () => {
     useEffect(() => {
         if (!homePhotos.length) {
             (async () => {
-                let [token, photos] = await _init();
+                let [token, photos] = await _init(SirvSearchQuery);
                 dispatch(setPhotos(photos));
             })();
         }

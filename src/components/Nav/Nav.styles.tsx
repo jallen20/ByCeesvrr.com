@@ -6,6 +6,10 @@ const NavWrapper = styled.div`
 	padding: 10px;
 	display: flex;
 	position: relative;
+	
+	@media (max-width: 500px) {
+		flex-direction: column;
+	}
 `;
 
 const NavLink = styled(Link)`

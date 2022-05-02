@@ -5,6 +5,7 @@ import PhotoWrapper from "../../components/PhotoWrapper";
 import {useDispatch, useSelector} from "react-redux";
 import {getPhotos} from "../../ducks/selectors";
 import {setPhotos} from "../../ducks/actions";
+import {SirvSearchQuery} from "../../config";
 
 const Work = () => {
     const dispatch = useDispatch();
@@ -13,7 +14,7 @@ const Work = () => {
     useEffect(() => {
         if (!workPhotos.length) {
             (async () => {
-                let [token, photos] = await _init();
+                let [token, photos] = await _init(SirvSearchQuery);
                 dispatch(setPhotos(photos));
             })();
         }
