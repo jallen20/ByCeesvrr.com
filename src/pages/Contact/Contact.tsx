@@ -14,7 +14,7 @@ import TextArea from "../../components/TextArea";
 const Contact = () => {
     const [emailReq, setEmailReq] = useState({} as EmailRequest);
 
-    const sendButtonDisabled = () => !emailReq.firstName || !emailReq.lastName || !emailReq.email || !emailReq.subject || !emailReq.message;
+    const sendButtonDisabled = () => !emailReq.firstName || !emailReq.lastName || !emailReq.email || !emailReq.message;
 
     const onSubmit = (e: any) => {
         e.preventDefault();
