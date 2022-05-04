@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {RefObject, useState} from 'react';
 import {TextBoxInput, TextBoxLabel, TextboxWrapper} from "./TextBox.styles";
 
 const Textbox = (props: { 

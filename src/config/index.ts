@@ -30,8 +30,7 @@ export const getHttpGetSetting = (token: string) => ({
     method: 'GET',
     headers: {
         'content-type': 'application/json',
-        authorization: `Bearer ${token}`,
-        'content-length': '200'
+        authorization: `Bearer ${token}`
     }
 });
 

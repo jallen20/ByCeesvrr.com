@@ -12,11 +12,17 @@ const PhotoWrapperWrapper = styled.div`
 	
 	img {
 		margin: 1px;
-		height: 920px;
+		height: 928px;
+		object-fit: cover;
 		
 		@media (max-width: 500px) {
     		width: auto;
     		height: auto;
+  		}
+  		
+  		@media (max-width: 1000px) {
+    		width: auto;
+    		height: 1000px;
   		}
 	}
 `;

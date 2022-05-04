@@ -14,6 +14,7 @@ const NavWrapper = styled.div`
 
 const NavLink = styled(Link)`
 	margin: 0px 2px;
+	font-size: 18px;
 	font-family: futura-pt,sans-serif;
 	font-weight: 400;
 	font-style: normal;

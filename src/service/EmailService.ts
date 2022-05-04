@@ -5,7 +5,7 @@ export type EmailRequest = {
     lastName: string,
     subject: string,
     email: string,
-    message: string
+    message: string,
 }
 
 export const sendMail = async (emailRequest: EmailRequest) => {
