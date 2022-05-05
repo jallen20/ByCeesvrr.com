@@ -19,6 +19,7 @@ const FlyoutContent = styled.div`
 	top:0;
 	bottom: 0;
 	left:0;
+	height: 100vh;
 	background: white;
 	display: none;
 	flex-direction: column;

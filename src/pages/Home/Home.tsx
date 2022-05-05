@@ -12,7 +12,7 @@ const Home = () => {
     const homePhotos = useSelector(getHomePhotos);
     
     useEffect(() => {
-        if (!homePhotos.length) {
+        if (+homePhotos.length === 0) {
             (async () => {
                 let [token, photos] = await _init(SirvSearchQuery);
                 dispatch(setPhotos(photos));
@@ -20,7 +20,8 @@ const Home = () => {
         }
     }, []);
     
-    return (<HomeWrapper>
+    return (
+        <HomeWrapper>
         <PhotoWrapper  photos={homePhotos} />
     </HomeWrapper>)
 };

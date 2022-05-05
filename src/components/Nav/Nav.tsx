@@ -12,6 +12,7 @@ const Nav = () => {
     
     return (
         <NavWrapper>
+            <NavLink to="/" onClick={onNavClick}>Home</NavLink>
             <NavLink to="/work" onClick={onNavClick}>Work</NavLink>
             <NavLink to="/contact" onClick={onNavClick}>Contact</NavLink>
         </NavWrapper>

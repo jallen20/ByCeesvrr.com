@@ -13,7 +13,7 @@ const NavWrapper = styled.div`
 `;
 
 const NavLink = styled(Link)`
-	margin: 0px 2px;
+	margin: 0px 5px;
 	font-size: 18px;
 	font-family: futura-pt,sans-serif;
 	font-weight: 400;
@@ -21,6 +21,10 @@ const NavLink = styled(Link)`
 	text-decoration: none;
 	color: black;
 	position: relative;
+	
+	@media (max-width: 500px) {
+		margin: 5px 0px;
+	}
 `;
 
 export {

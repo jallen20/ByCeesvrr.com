@@ -12,8 +12,10 @@ const AppContent = styled.div`
     flex-direction: column;
     justify-content: space-between;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     position: relative;
+    box-sizing: border-box;
+    overflow: hidden;
 `;
 
 export default (
